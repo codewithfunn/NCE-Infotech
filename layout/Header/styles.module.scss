@@ -1,20 +1,115 @@
-.PostHeader{
+.__header{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+  top: 0;
+}
+
+.PreHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  padding: 0.5em 0em;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+  }
+  &__contactInfo,
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1em;
+    &__icon {
+      font-size: 1.2em;
+      color: #485058;
+    }
+    &__content {
+      a {
+        font-size: 0.85em;
+        letter-spacing: 0.01em;
+        color: #1e1e1e;
+      }
+    }
+  }
+}
+.PostHeader {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  justify-content: space-between;
+  
+  &__logo {
+    svg {
+      height: 3em;
+      width: 100%;
+    }
+  }
+  &__links {
     display: flex;
     align-items: center;
-    background-color: aqua;
-    &__logo{
-        svg{
-            font-size: 1.2em;
-
+    justify-content: space-evenly;
+    gap: 2.5em;
+    &__link {
+        &:hover{
+            border-bottom:2px solid #303841;
         }
-    }
-    &__links{
-        display: flex;
-
-        &__link{
-            a{
-
+      a {
+      }
+      .__hasSubLinks {
+        ~ ul {
+          display: none;
+        }
+        &:hover {
+          ~ ul {
+            display: flex !important;
+            position: absolute;
+            flex-direction: column;
+            background-color: #e6e9f0;
+            border-radius: 0.5em;
+            padding: 1.7em ;
+            gap: 1em;
+            li {
+              ul {
+                position: absolute;
+                left: 0;
+                transform: translate(101%,-18%);
+                background-color: #e6e9f0;
+                padding: 1em;
+                border-radius: 0.5em;
+                li {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1em;
+                }
+              }
             }
+          }
         }
+      }
     }
+    &__button {
+      display: flex;
+      border-radius: 1em;
+      padding: 0.3em 0.5em;
+      font-weight: 500;
+      color: #364c53;
+      box-shadow: 0px 0px 3px 2px #364c53;
+      transition: ease-in-out 1s;
+      &:hover {
+        transition: ease-in-out 2s;
+        box-shadow: inset 0px 0px 3px 2px #364c53;
+      }
+    }
+  }
+}
+
+.PostHeader,
+.PreHeader {
+  padding: 0.5em 1.2em;
 }
