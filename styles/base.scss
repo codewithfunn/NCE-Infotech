@@ -1,0 +1,10 @@
+$redish-color: #f15f6f;
+$blue-color: #2f82ff;
+.mySwiper{
+    .swiper-button-prev, .swiper-button-next{
+        display: none;
+    }
+    .swiper-pagination-bullets{
+        display: none;
+    }
+}

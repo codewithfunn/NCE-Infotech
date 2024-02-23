@@ -1,0 +1,367 @@
+$gray-dark:#262626;
+$gray-dark-2:#141414;
+.about__us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 2em 0;
+  &__heading {
+    h2 {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #516fbc;
+        border-bottom: 2px solid #afafaf;
+        padding-bottom: 0.2em;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: "";
+            width: 28%;
+            height: 10%;
+            bottom: 0;
+            left: 0;
+            background-color: #516fbc;
+            transform: translate(130%, 70%);
+        }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 0.5em;
+
+    &__text {
+        font-size: 0.9em;
+        color: $gray-dark;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+      p {
+        letter-spacing: 0.1em;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+        li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5em;
+          span {
+            svg {
+              color: #22c7ff;
+            }
+            &:first-of-type {
+            }
+            &:last-of-type {
+            }
+          }
+        }
+      }
+    }
+    &__btnContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+      color: $gray-dark-2;
+      span{
+        font-size: 1.4em;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+      button{
+        font-size: 1em;
+        box-shadow: 0px 0px 1px 2px #22c7ff;
+        padding: 0.2em 0.8em;
+        border-radius: 0.4em;
+        color: #22c7ff;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.TransformativePlatform__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f5fa;
+    >div{
+        width: 80%;
+    }
+    .TransformativePlatform{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >div{
+            width: 49%;
+        }
+        &__content{
+
+            h2{
+
+            }
+            p{
+
+            }
+        }
+        &__img{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.ourOffers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 0;
+    text-align: justify;
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        h2 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #516fbc;
+            border-bottom: 2px solid #afafaf;
+            padding-bottom: 0.2em;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 28%;
+                height: 10%;
+                bottom: 0;
+                left: 0;
+                background-color: #516fbc;
+                transform: translate(130%, 70%);
+            }
+        }
+        p{
+            font-size: 0.9em;
+            word-spacing: 0.1em;
+        }
+    }
+    &__cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1em;
+        li{
+            transition: ease-in-out 0.5s;
+            width: calc(25% - 1em);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            padding: 2em 1.2em;
+            .ourOffers__cards__icon{
+                font-size: 1.4em;
+                color: #22c7ff;
+            }
+            .ourOffers__cards__heading{
+                font-size: 1.2em;
+                font-weight: 600;
+                color: #516fbc;
+                text-align: start;
+            }
+            .ourOffers__cards__subheading{
+                font-size: 0.9em;
+                text-align: unset;
+                letter-spacing: 0.05em;
+            }
+        }
+    }
+}
+.callToActionContainer{
+    background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("https://nceinfotech.com/assets/img/cta-bg.jpg") fixed center center;
+    background-size: cover;
+    padding: 5em 0;
+    display: flex;
+    justify-content: center;
+.callToAction{
+   width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+    &__heading{
+        h2{
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        p{
+            font-size: 1em;
+            font-weight: 400;
+        }
+    }
+    &__button{
+        border-radius: 0.8em;
+        border: 2px solid white;
+        padding: 0.3em 0.5em;
+    }
+}
+}
+
+@media screen and (max-width:1024px) {
+    .about__us {
+        &__heading {
+          h2 {
+          
+          }
+        }
+        &__content {
+          &__text {
+               
+            p {
+            }
+            ul {
+             
+              li {
+                
+                span {
+                  svg {
+                  }
+                  &:first-of-type {
+                  }
+                  &:last-of-type {
+                  }
+                }
+              }
+            }
+          }
+          &__btnContainer {
+          
+            span{
+           
+            }
+            button{
+             
+            }
+          }
+        }
+      }
+      .TransformativePlatform__container{
+        >div{
+            width: 80%;
+        }
+        .TransformativePlatform{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            >div{
+                width: 49%;
+            }
+        }
+    }
+    .ourOffers{
+        &__cards{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 1em;
+            li{
+                transition: ease-in-out 0.5s;
+                width: calc(33% - 1em);
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                padding: 2em 1.2em;
+            }
+        }
+    }
+}
+@media screen and (max-width:968px) {
+    
+}
+@media screen and (max-width:768px) {
+    .about__us {
+        &__content {
+          width: 90%;
+          gap: 0.5em;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .TransformativePlatform__container{
+        >div{
+            width: 90%;
+        }
+        .TransformativePlatform{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column-reverse;
+            >div{
+                width: 100%;
+            }
+        }
+    }
+    .ourOffers{
+        &__cards{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1em;
+            li{
+                transition: ease-in-out 0.5s;
+                width: calc(50% - 1em);
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                padding: 2em 1.2em;
+            }
+        }
+    }
+    .callToActionContainer{
+      
+        .callToAction{
+        width: 90%;
+        flex-direction: column;
+        gap: 1em;
+        align-items: flex-start;
+            &__heading{
+            }
+            &__button{
+                width: 49%;
+            }
+        }
+    }
+}
+@media screen and (max-width:691px) {
+    .ourOffers{
+        &__cards{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            // gap: 1em;
+            li{
+                transition: ease-in-out 0.5s;
+                width: calc(100%  );
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                padding: 2em 1.2em;
+            }
+        }
+    }
+}
+@media screen and (max-width:320px) {
+    
+}
