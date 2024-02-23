@@ -4,11 +4,32 @@ import Logo from "../../public/svg/logo.svg";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { useState } from "react";
+const PostHeader = ({}) => {
+  const router = useRouter();
 
-const PostHeader = () => {
+  const recursiveLink = (data, subMenu) => {
+    return (
+      <ul className={`${styles.subMenu} ${subMenu && styles[subMenu]}`}>
+        {data?.subLinks?.map((link) => {
+          return(
+          <li key={link?.id}   >
+            <Link href={link?.link} className="flex flex-row items-center justify-between">
+              <span>{link?.name}</span>
+              {link.subLinks && <FaChevronRight />}
+            </Link>
+            {link?.subLinks && recursiveLink(link , "__subMenu")}
+          </li>
+        )})}
+      </ul>
+    );
+  };
+
   const data = {
     heading: {
       logo: <Logo />,
+      link: "/",
     },
     links: [
       {
@@ -19,12 +40,12 @@ const PostHeader = () => {
       {
         id: 2,
         name: "About",
-        link: "/about",
+        link: "/about_us",
       },
       {
         id: 3,
         name: "Services",
-        link: "/",
+        link: "/services",
         subLinks: [
           {
             id: 1,
@@ -93,43 +114,35 @@ const PostHeader = () => {
       {
         id: 6,
         name: "Contact",
-        link: "/contact",
+        link: "/contact_us",
       },
     ],
   };
 
-  const recursiveLink = (data) => {
-    return (
-      <ul onMouseEnter={() => console.log("hii")}>
-        {data?.subLinks?.map((link) => (
-          <li key={link?.id}>
-            <Link href={link?.link} className="flex flex-row items-center justify-between">
-              <span>{link?.name}</span>
-              {link.subLinks && <FaChevronRight />}
-            </Link>
-            {link?.subLinks && recursiveLink(link)}
-          </li>
-        ))}
-      </ul>
-    );
-  };
-
   return (
     <div className={styles.PostHeader}>
-      <div className={styles.PostHeader__logo}>{data?.heading?.logo}</div>
-      <ul className={styles.PostHeader__links}>
+      <div
+        className={styles.PostHeader__logo}
+        onClick={() => router.push(data?.heading?.link)}
+      >
+        {data?.heading?.logo}
+      </div>
+      <ul className={styles.PostHeader__links} >
         {data?.links?.map((link) => (
-          <li key={link?.id} className={styles.PostHeader__links__link}>
-            <Link
-              href={link?.link}
-              className={link.subLinks && styles.__hasSubLinks}
-            >
+          <li
+            key={link?.id}
+            className={`${styles.PostHeader__links__link} ${
+              router.pathname === link?.link ? styles.__linkActive : ""
+            } `}
+          >
+            <Link href={link?.link} className={link.subLinks && styles.__hasSubLinks}>
               {link?.name}
             </Link>
             {link?.subLinks && (
-              <ul onMouseEnter={() => console.log("hii")} >
+              <div className={styles.__moreLinks}>
                 {recursiveLink(link)}
-              </ul>
+                <div className={styles.__overflow}></div>
+              </div>
             )}
           </li>
         ))}
