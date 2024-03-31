@@ -14,7 +14,7 @@ const Index = ({frontMatter, mdxSource}) => {
 
 export default Index
 export async function getServerSideProps() {
-    const filePath = path.join("./mdxData/ourPolicy", "copyrightNotice" + ".mdx");
+    const filePath = path.join("./MDX/Links", "about_us" + ".mdx");
   
     const markdownWithMeta = fs.readFileSync(filePath, "utf-8");
   

@@ -117,7 +117,7 @@ const Index = ({bannerData1, options}) => {
           clickable: true,
         }}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         navigation={true}

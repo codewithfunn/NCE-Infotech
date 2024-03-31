@@ -182,9 +182,9 @@ export const OurOffers = () => {
       <ul className={styles.ourOffers__cards}>
         {data?.cards?.map((item, index) => (
           <li key={index} className="shadow-md hover:shadow-2xl cursor-pointer " onClick={() => router.push(item?.link)}>
-            <span className={styles.ourOffers__cards__icon}>{item?.content?.icon}</span>
-            <span className={styles.ourOffers__cards__heading}>{item?.content?.heading}</span>
-            <span className={styles.ourOffers__cards__subheading}>{item?.content?.subheading}</span>
+            <i className={styles.ourOffers__cards__icon}>{item?.content?.icon}</i>
+            <h3 className={styles.ourOffers__cards__heading}>{item?.content?.heading}</h3>
+            <p className={styles.ourOffers__cards__subheading}>{item?.content?.subheading.substring(0,150)+"..."}</p>
           </li>
         ))}
       </ul>
@@ -257,7 +257,7 @@ export default function Home() {
     },
   ];
   return (
-    <div>
+    <div className={`${styles.max_width_1280} ${styles.home__container}`}>
       <Banner
         bannerData={bannerData}
         options={[
@@ -269,7 +269,7 @@ export default function Home() {
       />
       <AboutUs />
       <TransformativePlatform />
-<CallToAction/>
+      <CallToAction/>
     </div>
   );
 }

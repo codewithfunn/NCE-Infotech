@@ -72,7 +72,7 @@ export default function Footer({ country }) {
         {
           name:"IT Service",
           icon: <VscChevronRight />,
-          link: "/it_service",
+          link: "/it_services",
         },
         {
           name: "Career",
@@ -157,7 +157,7 @@ export default function Footer({ country }) {
   return (
     <>
       <footer className={styles.footer}>
-        <div className={styles.footer__container}>
+        <div className={`${styles.footer__container} ${styles.max_width_1280}`}>
           <Links links={links} />
           <NewsLetter />
           <Socials socials={socials} />

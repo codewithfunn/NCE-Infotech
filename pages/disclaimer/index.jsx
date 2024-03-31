@@ -40,7 +40,7 @@ const Index = ({ frontMatter, mdxSource }) => {
   };
   return (
     <div>
-      <div className={styles.__banner}>
+      <div className={`${styles.__banner} ${styles.max_width_1280}`}>
         <BannerWithoutSwiper data={data} />
       </div>
       <LinksLayout>

@@ -72,7 +72,8 @@ const PreHeader = () => {
     ],
   };
   return (
-    <div className={styles.PreHeader}>
+    <div className={styles.PreHeader_container}>
+    <div className={`${styles.PreHeader} ${styles.max_width_1280}`}>
       <div className={styles.PreHeader__contactInfo__Container}>
         {data?.contactInfo?.map((item) => {
           return (
@@ -99,6 +100,8 @@ const PreHeader = () => {
         })}
       </div>
     </div>
+    </div>
+
   );
 };
 

@@ -29,6 +29,8 @@ const PostHeader = ({}) => {
   const data = {
     heading: {
       logo: <Logo />,
+      title: "NCE Infotech",
+      subHeading: "Always deliver excellent service to customer",
       link: "/",
     },
     links: [
@@ -120,12 +122,20 @@ const PostHeader = ({}) => {
   };
 
   return (
-    <div className={styles.PostHeader}>
+    <div className={styles.PostHeaderContainer}>
+    <div className={`${styles.PostHeader} ${styles.max_width_1280}`}>
       <div
         className={styles.PostHeader__logo}
         onClick={() => router.push(data?.heading?.link)}
       >
-        {data?.heading?.logo}
+        {/* {data?.heading?.logo} */}
+        <span className={styles.PostHeader__logo__img}>
+        <Image src={"/logo.png"} width={100} height={100} alt="Logo" />
+        </span>
+        <div className={styles.PostHeader__logo__heading} >
+          <h1>{data?.heading?.title}</h1>
+          <p>{data?.heading?.subHeading}</p>
+        </div>
       </div>
       <ul className={styles.PostHeader__links} >
         {data?.links?.map((link) => (
@@ -150,6 +160,7 @@ const PostHeader = ({}) => {
           <button>Get Started</button>
         </div>
       </ul>
+    </div>
     </div>
   );
 };
